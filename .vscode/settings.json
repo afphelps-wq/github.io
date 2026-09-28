@@ -1,0 +1,6 @@
+{
+  // index.html uses {{ ... }} template placeholders inside style="" attributes,
+  // which VS Code's CSS checker reports as errors even though they're valid for
+  // the page's runtime. This turns off that check for this project only.
+  "html.validate.styles": false
+}
