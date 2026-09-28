@@ -15,6 +15,7 @@
 //   data/embedding.json      data points for the interactive map in the hero
 //   uploads/jupy-theme.png   screen image drawn on the canvas
 //   assets/fig01..04-*.png   images on the "Four ways in" cards
+//   assets/projects/*.png    images on the Projects cards
 // ==========================================================================
 
 const TYPES = [
@@ -570,9 +571,24 @@ class Component extends DCLogic {
       ],
       cards: [
         { href: '#research', slot: 'Fig 01', img: (window.__resources && window.__resources.fig01) || 'assets/fig01-umap.png', ph: 'UMAP export', title: 'Research', body: 'Single-cell and spatial analysis of the tumor-immune microenvironment in the Bruno Lab at UPMC Hillman — a 9-dataset PDAC atlas, plus tertiary lymphoid structure work in lung and ovarian cancer.' },
-        { href: '#work', slot: 'Fig 02', img: (window.__resources && window.__resources.fig02) || 'assets/fig02-tls.png', ph: 'TLS Builder capture', title: 'Projects', body: 'TLS Builder, a simulation game modelling tertiary lymphoid structure development from spatial rules; a TartanHacks financial analytics platform; a K-5 AI literacy curriculum for the CREATE Lab.' },
+        { href: '#projects', slot: 'Fig 02', img: (window.__resources && window.__resources.fig02) || 'assets/fig02-tls.png', ph: 'TLS Builder capture', title: 'Projects', body: 'TLS Builder, a simulation game modelling tertiary lymphoid structure development from spatial rules; a TartanHacks financial analytics platform; a K-5 AI literacy curriculum for the CREATE Lab.' },
         { href: '#teaching', slot: 'Fig 03', img: (window.__resources && window.__resources.fig03) || 'assets/fig03-lab.png', ph: 'Teaching photo', title: 'Leadership', body: 'TA for 15-112 Fundamentals of Programming and Computer Science at Carnegie Mellon, and student mentor through the Hillman Cancer Academy.' },
         { href: '#publications', slot: 'Fig 04', img: (window.__resources && window.__resources.fig04) || 'assets/fig04-poster.png', ph: 'Poster photo', title: 'Publications', body: 'First-author abstract and poster on CD200 in ovarian cancer, a co-authored abstract on memory B cells, and conference presentations.' }
+      ],
+      // GitHub projects, shown as cards in the #projects section of index.html
+      projects: [
+        { slot: 'Proj 01', img: 'assets/projects/seq2find.png', ph: 'Seq2Find search interface', title: 'Seq2Find', body: 'AI-ranked GEO dataset search. Describe the study you need (assay, organism, tissue, conditions) and get a short ranked list of GEO series with download links. It queries NCBI live, then a language model judges each candidate against the whole request.', stack: 'FastAPI · PostgreSQL · OpenAI · NCBI E-utilities', links: [
+          { label: 'Live site', href: 'https://afphelps-wq.github.io/seq2find-frontend/' },
+          { label: 'Frontend', href: 'https://github.com/afphelps-wq/seq2find-frontend' },
+          { label: 'Backend', href: 'https://github.com/afphelps-wq/HW4_Backend' }
+        ] },
+        { slot: 'Proj 02', img: 'assets/projects/lane-hopper.png', ph: 'Lane Hopper title screen', title: 'Lane Hopper', body: 'An original low-poly endless lane-crossing game in the spirit of Crossy Road. Procedurally generated roads, rivers and railroads, coins that unlock four animated characters, and original sound and music.', stack: 'JavaScript · Three.js · Vite', links: [
+          { label: 'Play', href: 'https://afphelps-wq.github.io/crossy-road/' },
+          { label: 'Code', href: 'https://github.com/afphelps-wq/crossy-road' }
+        ] },
+        { slot: 'Proj 03', img: 'assets/projects/bulk-rnaseq.png', ph: 'Bulk RNA-seq Explorer interface', title: 'Bulk RNA-seq Explorer', body: 'Upload a count matrix, compare two groups of samples, and get differential expression, a volcano plot and pathway enrichment, plus a summary of the strongest genes grounded in PubMed abstracts. Built for 15-113.', stack: 'Python · Flask · g:Profiler · PubMed · OpenAI', links: [
+          { label: 'Code', href: 'https://github.com/afphelps-wq/15113-api-project' }
+        ] }
       ]
     };
   }
